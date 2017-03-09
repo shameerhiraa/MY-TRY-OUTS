@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="angular.min.js"></script>
+<title>TEST Document</title>
+
+<style>
+
+
+
+
+
+
+
+</style>
+
+</head>
+<body>
+<button onclick="myFunction()">Click here</button>
+<script>
+
+function calculate(firstNo){
+	var f= firstNo;
+	return function(secondNo){
+		
+		return f+secondNo;
+	
+	}
+
+
+}
+
+var a = calculate(10);
+var b = calculate(20);
+
+alert(a(2))
+alert(b(2))
+
+
+</script>
+
+</body>
+</html>

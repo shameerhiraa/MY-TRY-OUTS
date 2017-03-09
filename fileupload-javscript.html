@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>TEST Document</title>
+
+</head>
+<body>
+
+<input type="file" id="fileElem" multiple accept="image/*" style="display:none"  onchange="handleFiles(this.files)">
+<a href="#" id="fileSelect" onclick="clickedLink()">Select some files</a>
+
+<script>
+function clickedLink(){
+	
+	document.getElementById("fileElem").click();
+}
+function handleFiles(par){
+	console.log(par)
+
+}
+
+</script>
+
+</body>
+</html>

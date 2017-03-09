@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<title>TEST Document</title>
+	</head>
+	<body >
+	<div ng-app="theApp" ng-controller="theController">{{theNumber}}</div>
+	
+	
+	<script>
+		
+var theApp = angular.module("theApp",[])
+
+
+
+theApp.controller("theController",function($scope,$q){
+
+		console.log($scope)
+		console.log($q)
+		
+		$scope.addOne = function(num){
+			var theQ = $q.defer();
+			
+			if(isNaN(num)){
+				theQ.reject("This is not a number");
+			
+			}else{
+				theQ.resolve(num+1);
+				
+			}
+			
+			return theQ.promise;
+		
+		}
+	
+		$scope.theNumber = "Shameer";
+		
+		$scope.thePromise = $scope.addOne($scope.theNumber);
+		
+		$scope.thePromise.then(function(r){
+			$scope.theNumber = r;
+		
+		},
+		function(err){
+			$scope.theNumber = err;
+		})
+
+
+})
+	
+	
+	</script>
+
+	</body>
+</html>

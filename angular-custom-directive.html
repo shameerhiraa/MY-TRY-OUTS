@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="angular.min.js"></script>
+<title>TEST Document</title>
+
+<style>
+
+
+
+
+
+
+
+</style>
+
+</head>
+<body ng-app="theApp">
+<div ng-controller="theController">
+<div>{{company}}</div>
+<my-tag thecompany="company" name="shameer" role="UI Developer" func="changeCompany()"></my-tag>
+
+
+
+</div>
+
+<script>
+var theApp = angular.module("theApp",[])
+
+theApp.directive("myTag",function(){
+		function theLinkFunction($scope,el,att){
+			console.log('INSIDE LINK FUNCTION');
+			
+			console.log($scope.thecompany)
+		}
+
+		return{
+			
+			restrict:"E",
+			scope:{
+				thecompany: '@',
+				func: '&'
+			},
+			template:'<div>{{thecompany}}<input type="text" ng-model="thecompany" ng-click="func()"></input></div>',
+			link: theLinkFunction
+			
+		
+		}
+
+
+})
+
+
+theApp.controller("theController",function($scope){
+
+	$scope.company = "Logical steps";
+	$scope.changeCompany = function(par){
+	
+		$scope.company = "Cognizant Techonologies";
+	}
+
+})
+
+</script>
+
+</body>
+</html>

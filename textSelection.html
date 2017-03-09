@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="angular.min.js"></script>
+<title>TEST Document</title>
+
+<style>
+
+
+
+
+
+
+
+</style>
+
+</head>
+<body>
+<iframe id="myFrame" width="500" height="200">
+
+
+</iframe>
+<input id="myTextField" type="file" value="enter text here" onmouseup="onTextMouseUp()"></input>
+<button onclick="myFunction()">Click here</button>
+<script>
+
+document.getElementById("myFrame").contentDocument.designMode = "On"
+
+function myFunction(){
+//console.log(document.getElementById("myFrame"))
+var myFrame = document.getElementById("myFrame")
+console.log(myFrame.contentDocument.execCommmand)
+myFrame.contentWindow.document.execCommmand('bold',true,null)
+//console.log(document.getElementById("myFrame").innerHtml())
+
+}
+</script>
+
+</body>
+</html>

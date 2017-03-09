@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Custom Directive Testing</title>
+
+
+
+</head>
+
+
+<body>
+
+
+<div ng-app="myApp" ng-controller="theController">
+<div ng-repeat="a in films">
+	<movie-name title="{{a.Name}}"></movie-name>
+<div>
+
+</div>
+
+
+<script src="scripts/angular.min.js"></script>
+<script>
+
+var theApp = angular.module('myApp',[]);
+theApp.directive('movieName',function(){
+
+	return {
+		scope:{
+			title:'@'
+		},
+		restrict:'E',
+		template:'<p style="background-color:red">{{title}}</p>'
+	
+	}
+
+
+
+})
+theApp.controller('theController',function($scope){
+
+		$scope.films = [
+				{"Name":"Ice Age","Char":"sid"},
+				{"Name":"Rango","Char":"Rango"},
+				{"Name":"Jungle Book","Char":"Mougly"},
+				{"Name":"Despicable me","Char":"Agnes"}
+		]
+		
+		$scope.masterUser = "Shameer";
+		console.log("master user:"+$scope.masterUser)
+		$scope.user = angular.copy($scope.masterUser)
+		console.log("user:"+$scope.user)
+		$scope.user ="Shemi";
+		console.log('after changing value')
+		console.log("master user:"+$scope.masterUser)
+		console.log("master user:"+$scope.user)
+		
+
+})
+
+
+</script>
+</body>
+
+
+
+</html>

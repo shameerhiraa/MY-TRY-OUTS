@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+<body>
+<div id="holder" >
+
+
+<input id="btn" type="button" value="MyBtn"></input>
+
+<img id="test-img" src="https://www.gstatic.com/webp/gallery3/1.png"/>
+
+</div>
+
+<div id="test-each">
+<span id="001">123</span>
+<span id="002">12dsfa3</span>
+<span id="003">123sdfdasf</span>
+<span id="004">12sdfasdf3</span>
+
+</div>
+
+<script src="scripts/jquery.js"></script>
+<script>
+$(document).ready(function(){
+	
+	$("#test-img").one("load",function(evt){
+	
+		//console.log(evt)
+	
+	})
+	
+	console.log($("span").get(1));
+		
+
+})
+
+
+</script>
+</body>
+</html>

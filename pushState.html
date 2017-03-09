@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+<title>TEST Document</title>
+
+
+</head>
+<body>
+
+<input onclick="onTestBtnClick()" type="button" value="Click herer"></input>
+<script>
+
+function onTestBtnClick(){
+
+	console.log(window.history)
+	window.history.pushState(null,null,'test');
+
+}
+
+window.history.onpopstate = function(e){
+
+alert('onpop')
+
+}
+
+
+</script>
+
+
+</body>
+</html>

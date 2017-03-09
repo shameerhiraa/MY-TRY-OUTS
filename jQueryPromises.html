@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+<body>
+<div id="holder" >
+
+
+<input id="btn" type="button" value="MyBtn"></input>
+
+</div>
+
+
+<script src="scripts/jquery.js"></script>
+<script>
+$(document).ready(function(){
+	
+	function getFirstJson(){
+		return $.ajax({
+			url:"http://echo.jsontest.com/insert-key-here/insert-value-here/key/value",
+			type:"GET",
+			success:function(data){
+				console.log("First JSON success");
+				
+				console.log("---------")
+			
+			}
+		})
+	
+	}
+	function getSecondJson(){
+		return $.ajax({
+			url:"http://headers.jsontest.com/",
+			type:"GET",
+			success:function(data){
+				console.log("Second JSON success");
+				
+				console.log("---------")
+			}
+		})
+	
+	}
+	
+	
+	//$("#btn").on("click",getFirstJson);
+	
+	var firstPromise = getFirstJson();
+	var secondPromise = getSecondJson();
+	
+	firstPromise.done(function(){
+		alert("promise done")
+	})
+	
+	secondPromise.done(function(){
+		alert("Second promise done")
+	
+	})
+	
+	secondPromise.fail(function(){
+		alert("Second promise failed")
+	
+	})
+	
+	var multiPromise = $.when(firstPromise,secondPromise);
+	
+	multiPromise.done(function(){
+		alert("Both Promises are done")
+	
+	})
+	
+		
+
+})
+
+
+</script>
+</body>
+</html>

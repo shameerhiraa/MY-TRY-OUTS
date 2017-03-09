@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Bookmar App</title>
+
+<style>
+
+.listWrapper{
+
+	width:250px;
+	background-color:#ff9900;
+
+}
+.list-tile{
+	width:100%;
+	height:20px;
+	background-color:yellow;
+	cursor:pointer;
+	
+}
+.list-tile:hover{
+	background-color:white;
+
+}
+</style>
+
+
+</head>
+<body ng-app="bmApp">
+
+<div ng-controller="mainBmCtrl">
+<div  class="listWrapper">
+	<div class="list-tile" ng-repeat="a in bookmarkData">
+		<a ng-href="http://{{a.url}}" target="_blank">{{a.title | firstLetter}}</a>
+	</div>
+
+</div>
+
+
+<script src="scripts/angular.min.js"></script>
+<script>
+
+var bmApp = angular.module('bmApp',[]);
+
+bmApp.filter("firstLetter",function(){
+
+	return function(n){
+		console.log(n)
+		return String(n).substr(0,1).toUpperCase();
+	
+	
+	}
+
+
+})
+
+bmApp.factory("getDataService",function($http){
+	return {
+			loadData:function(path,successCallback,errorCallback){
+				$http.get(path).then(successCallback,errorCallback);
+			}
+			
+	}
+})
+
+bmApp.controller('mainBmCtrl',function($scope,getDataService){
+
+	
+	
+	getDataService.loadData("bookmark.json",function(par){
+		$scope.bookmarkData = par.data.bookmarks;
+		console.log($scope.bookmarkData)
+		console.log(typeof $scope.bookmarkData)
+	
+	},function(par){
+		console.log('errorgg')
+		console.log(par);
+	
+	})
+	
+
+})
+
+
+</script>
+
+
+</body>
+
+</html>

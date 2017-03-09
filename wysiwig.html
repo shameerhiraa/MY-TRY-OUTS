@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+		.wysi-cont{ 
+			width:500px;
+			height:300px;
+			background-color:#EEECEC;
+			}
+		.wysi-header{
+			width:100%;
+			height:40px;
+			background-color:#3F3D3D;
+		
+		}	
+		.wysi-option-btns{
+			background-image:url("images/wysi-icons.png");
+			background-repeat:no-repeat;
+			background-color:#4D4D4D;
+			width:28px;
+			height:25px;
+			display:inline-block;
+			margin:8px;
+			margin-right:0px;
+			border-radius: 2px;
+
+		}
+		.wysi-bold-btn{
+			background-position:6px 3px;
+			
+		}
+		.wysi-italic-btn{
+			background-position:6px -22px;
+			
+		}
+		.wysi-underline-btn{
+			background-position:6px -48px;
+			
+		}
+		.wysi-left-align-btn{
+			background-position:6px -75px;
+			
+		}
+		.wysi-right-align-btn{
+			background-position:6px -101px;
+			
+		}
+		.wysi-justify-btn{
+			background-position:6px -127px;
+			
+		}
+		.wysi-text-area-cont{
+			width:465px;
+			height:200px;
+			margin:15px;
+			background-color:white;
+		
+		}
+		
+		
+
+		</style>
+	</head>
+	<body>
+		<div id="wysi_cont" class="wysi-cont"/>
+		<div id="wysi_header" class="wysi-header">
+			<div id="wysi_bold_btn" class="wysi-option-btns wysi-bold-btn" class="font-bold" onclick='onBoldClick()'></div>
+			<div class="wysi-option-btns wysi-italic-btn"></div>
+			<div class="wysi-option-btns wysi-underline-btn"></div>
+			<div class="wysi-option-btns wysi-left-align-btn"></div>
+			<div class="wysi-option-btns wysi-right-align-btn"></div>
+			<div class="wysi-option-btns wysi-justify-btn"></div>
+		</div>
+		<iframe id="text_edit_area" class="wysi-text-area-cont" ></iframe>
+		
+		<!--<script src="scripts/jquery.js"></script>-->
+		<script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+		<script>
+		
+		
+			$(document).ready(function(){
+				document.getElementById('text_edit_area').contentWindow.document.designMode = "on";
+				document.getElementById('text_edit_area').contentWindow.document.close();
+				var editArea = document.getElementById("text_edit_area").contentWindow;
+				
+				//editArea.document.designMode = "on"
+				editArea.focus();
+				$("#wysi_bold_btn").on("click",function(){
+					onBoldClick()
+				
+				})
+				
+				
+			
+			});
+		
+			function checkSelection(){
+				//alert(window.getSelection());
+			
+			}
+			function onBoldClick(){
+				alert("cliecked on bold");
+				 var edit = document.getElementById("text_edit_area").contentWindow;
+				edit.focus();
+				edit.document.execCommand("bold", false, "");
+				edit.focus();
+			
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+<body>
+<div id="holder" >
+
+
+<input id="btn" type="button" value="MyBtn"></input>
+
+</div>
+
+
+<script src="scripts/jquery.js"></script>
+<script>
+$(document).ready(function(){
+	function jsonCallback(){
+				alert("done")
+			
+			}
+	 $.ajax({
+			url:"http://run.plnkr.co/plunks/v8xyYN64V4nqCshgjKms/data-2.json",
+			 dataType: "jsonp",
+			jsonpCallback: 'jsonCallback',
+			success: function(data) {
+				console.log(data);
+			}
+			
+			
+			
+			
+		});
+		
+
+	
+	}
+	
+	
+
+)
+
+
+</script>
+</body>
+</html>

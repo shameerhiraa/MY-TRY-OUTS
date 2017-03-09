@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body ng-app="myApp">
+
+<div> This is my first div</div>
+
+<div ng-controller="theController">
+<a href="#google">Go to google</a>
+<a href="#yahoo">Yep Yahoo</a>
+
+<div ng-view></div>
+
+</div>
+
+<script src="scripts/angular.min.js"></script>
+<script src="scripts/angular-route.min.js"></script>
+<script>
+
+var theApp = angular.module("myApp",['ngRoute']);
+
+theApp.config(function($routeProvider){
+	
+	$routeProvider.when("google",{
+		templateUrl:"1.html"
+	}).when("yahoo",{
+		templateUrl:"2.html"
+	}).otherwise({
+		templateUrl:"3.html"
+	})
+
+
+})
+
+theApp.controller("theController",function($scope){
+
+	alert("inside angular controller");
+	$scope.name = "Nuha parvin";
+
+})
+
+
+</script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<style>
+		.wysi-text-area-cont{
+			width:auto;
+			height:200px;
+		
+			background-color:white;
+			overflow:auto;
+			margin:15px;
+			position:relative;
+			padding:10px;
+			
+		
+		}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="text_edit_panel" style="width:585px"></div>
+<div style="width: 587px;background-color:#ccc;position:absolute;">
+<div id="text_edit_area" class="wysi-text-area-cont" ></div>
+</div>
+<script src="scripts/jquery.js"></script>
+<script src="scripts/nicEdit.js"></script>
+<script>
+$(document).ready(function(){
+
+	
+
+}) 
+bkLib.onDomLoaded(function() {
+ 
+		  var theNicEditor = new nicEditor();
+          theNicEditor.setPanel('text_edit_panel');
+          theNicEditor.addInstance('text_edit_area');
+ });
+ </script>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+#holder{
+	width:500px;
+	height:500px;
+	background-color:yellow;
+	display:flex;
+	
+}
+div{
+	width:100px;
+	height:100px;
+	background-color:red;
+	transition: width .5s, height .5s;
+	
+
+}
+#item:hover{
+	width:200px; 
+	background-color:blue;
+
+}
+
+
+</style>
+</head>
+<body>
+
+<div id="item1">1</div>
+<div id="item2">2</div>
+<div id="item3">3</div>
+
+
+
+
+<script src="scripts/jquery.js"></script>
+<script>
+
+$(document).ready(function(){
+
+	alert("ready");
+	$("#item2").hide();
+
+})
+
+</script>
+
+</body>
+</html>

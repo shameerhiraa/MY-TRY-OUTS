@@ -1,0 +1,233 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<link rel="stylesheet" media="screen" type="text/css" href="styles/colorpicker.css" />
+
+    <style>
+        .wysi-wrapper {
+            width: 500px;
+            height: 300px;
+            display: inline-block;
+        }
+        
+        .wysi-header {
+            width: 100%;
+            height: 40px;
+            background-color: #3F3D3D;
+        }
+        
+        .wysi-option-btns {
+            background-image: url("images/wysi-icons.png");
+            background-repeat: no-repeat;
+            background-color: #4D4D4D;
+            width: 28px;
+            height: 25px;
+            display: inline-block;
+            margin: 8px;
+            margin-right: 0px;
+            border-radius: 2px;
+        }
+        
+        .wysi-bold-btn {
+            background-position: 6px 3px;
+        }
+        
+        .wysi-italic-btn {
+            background-position: 6px -22px;
+        }
+        
+        .wysi-underline-btn {
+            background-position: 6px -48px;
+        }
+        
+        .wysi-left-align-btn {
+            background-position: 6px -75px;
+        }
+        
+        .wysi-right-align-btn {
+            background-position: 6px -101px;
+        }
+        
+        .wysi-justify-btn {
+            background-position: 6px -127px;
+        }
+        
+        .wysi-text-area-cont {
+            width: 465px;
+            height: 200px;
+            margin: 15px;
+            background-color: white;
+        }
+        
+        .wysi-font-size {
+            background-color: #4D4D4D;
+            width: 35px;
+            height: 25px;
+            display: inline-block;
+            margin: 8px;
+            margin-right: 0px;
+            border-radius: 2px;
+            color: #fff;
+            border-style: none;
+            position: relative;
+            top: -16px;
+        }
+        
+        .wysi-font-name {
+            background-color: #4D4D4D;
+            width: 125px;
+            height: 25px;
+            display: inline-block;
+            margin: 8px;
+            margin-right: 0px;
+            border-radius: 2px;
+            color: #fff;
+            border-style: none;
+            position: relative;
+            top: -16px;
+        }
+        
+        .wysi-edit-area {
+            width: 498px;
+            height: 200px;
+            border: 1px solid #CCC;
+            overflow: auto;
+            top: 100px;
+            top: 50px;
+            position: absolute;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div id="wysi_wrapper" class="wysi-wrapper">
+        <div id="wysi_header" class="wysi-header">
+            <div class="wysi-option-btns wysi-bold-btn" onclick="boldIt()"></div>
+            <div class="wysi-option-btns wysi-italic-btn" onclick="ItalicIt()"></div>
+            <div class="wysi-option-btns wysi-left-align-btn" onclick="makeLeftAligned()"></div>
+            <div class="wysi-option-btns wysi-right-align-btn" onclick="makeRightAligned()"></div>
+            <div class="wysi-option-btns wysi-justify-btn" onclick="makeCenterAligned()"></div>
+
+            <select id="fontSize" class="wysi-font-size">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			
+			</select>
+
+            <select id="fonts" class="wysi-font-name">
+			 <option value="Normal">Normal</option>
+			 <option value="Arial">Arial</option>
+			 <option value="Comic Sans MS">Comic Sans MS</option>
+			 <option value="Courier New">Courier New</option>
+			 <option value="Monotype Corsiva">Monotype</option>
+			 <option value="Tahoma New">Tahoma</option>
+			 <option value="Times">Times</option>
+			 <option value="Trebuchet New">Trebuchet</option>
+			 <option value="Ubuntu">Ubuntu</option>
+		</select>
+		
+        </div>
+        <iframe frameborder="0" class="wysi-edit-area" id="wysi_edit_area" contenteditable></iframe>
+		<input type="text" name="font-color"class="wysi-font-color" id="wysi_font_color">
+				<input type="color" name="font-color"class="wysi-font-color" id="wysi_bg_font_color">
+    </div>
+    <script src="scripts/jquery.js"></script>
+	<script type="text/javascript" src="scripts/colorpicker.js"></script>
+    <script>
+        $(document).ready(function() {
+            document.getElementById('wysi_edit_area').contentWindow.document.designMode = "on";
+            document.getElementById('wysi_edit_area').contentWindow.document.close();
+            var edit = document.getElementById("wysi_edit_area").contentWindow;
+            edit.focus();
+       
+            $("#fonts").on('change', function() {
+                changeFont($("#fonts").val());
+            });
+
+            $("#fontSize").on("change", function() {
+
+                alert('onchange' + $("#fontSize").val())
+                changeFontSize($("#fontSize").val());
+
+            })
+			$("#wysi-font-color").ColorPicker({color:"#fff666"});
+        });
+
+        function boldIt() {
+            var edit = document.getElementById("wysi_edit_area").contentWindow;
+            edit.focus();
+            edit.document.execCommand("bold", false, "");
+            edit.focus();
+        }
+
+        function makeLeftAligned() {
+            var edit = document.getElementById("wysi_edit_area").contentWindow;
+            edit.focus();
+            edit.document.execCommand("justifyLeft", false, "");
+            edit.focus();
+        }
+
+        function makeRightAligned() {
+            var edit = document.getElementById("wysi_edit_area").contentWindow;
+            edit.focus();
+            edit.document.execCommand("justifyRight", false, "");
+            edit.focus();
+        }
+
+        function makeCenterAligned() {
+            var edit = document.getElementById("wysi_edit_area").contentWindow;
+            edit.focus();
+            edit.document.execCommand("justifyCenter", false, "");
+            edit.focus();
+        }
+
+        function ItalicIt() {
+            var edit = document.getElementById("wysi_edit_area").contentWindow;
+            edit.focus();
+            edit.document.execCommand("italic", false, "");
+            edit.focus();
+        }
+
+        function changeFont(font) {
+            var edit = document.getElementById("wysi_edit_area").contentWindow;
+            edit.focus();
+            edit.document.execCommand("FontName", false, font);
+            edit.focus();
+        }
+
+        function changeFontSize(size) {
+
+            var edit = document.getElementById("wysi_edit_area").contentWindow;
+            edit.focus();
+            edit.document.execCommand("FontSize", false, size);
+            edit.focus();
+
+        }
+
+        function url(url) {
+            var edit = document.getElementById("wysi_edit_area").contentWindow;
+            edit.focus();
+            edit.document.execCommand("Createlink", false, url);
+            edit.focus();
+        }
+        setInterval(function() {
+
+            var gyt = $("#wysi_edit_area").contents().find("body").html().match(/@/g);
+            if ($("#wysi_edit_area").contents().find("body").html().match(/@/g) >= 0) {} else {
+                $("#text").val($("#wysi_edit_area").contents().find("body").html());
+            }
+            $("#text").val($("#wysi_edit_area").contents().find("body").html());
+        }, 1000);
+    </script>
+</body>
+
+</html>

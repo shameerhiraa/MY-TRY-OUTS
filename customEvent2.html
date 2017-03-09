@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<div>Hello Event</div>
+   
+<script>
+
+var myEvent = new Event("iframeChange");
+
+
+document.addEventListener("iframeChange",function(){
+
+	alert("iframeChange fired")
+
+})
+
+document.dispatchEvent(myEvent)
+</script>
+</body>
+</html>

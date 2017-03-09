@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+<!--<script src="cntrlr.js"></script>-->
+</head>
+
+<body>
+<script>
+var theApp = angular.module("myApp",[]);
+
+theApp.controller("personController",function($scope) {
+  
+	$scope.numb = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+	
+});
+
+theApp.filter('myFilter',function(){
+		return function(n){
+			var last_digit= n%10;
+			if(last_digit===0){
+				return n + 'th';
+			}else if(last_digit===1){
+				return n + 'th';
+			}else if(last_digit===2){
+				return n + 'nd';
+			}else if(last_digit===3){
+				return n + 'rd';
+			}else if(last_digit===4){
+				return n + 'th';
+			}else if(last_digit===5){
+				return n + 'th';
+			}else if(last_digit===6){
+				return n + 'th';
+			}else if(last_digit===7){
+				return n + 'th';
+			}else if(last_digit===8){
+				return n + 'th';
+			}else if(last_digit===9){
+				return n + 'th';
+			}
+			return n;
+		}
+
+
+})
+
+</script>
+
+
+<!---<div ng-app="" ng-init="price=250;Qnt=3;Dsc=5">-->
+<div ng-app="myApp" ng-controller="personController" style="color:#f90">
+<input type="text" ng-model="search" />
+<ul>
+<li ng-repeat="x in numb">{{x | myFilter}} </li>
+
+</ul>
+
+</div>
+
+</body>
+</html>

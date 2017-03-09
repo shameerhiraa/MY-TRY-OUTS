@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<div id="test_div" style="width:500px;">
+		
+		<textformat rightmargin="5" leading="2"><p align="LEFT"><font size="15" color="#000000" letterspacing="0" kerning="1" style="font-size: 15px;" face="Monotype Corsiva"><b>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and </b></font></p></textformat>
+	
+	
+	</div>
+   
+<script>
+//var text = document.getElementById("test_div").innerHTML
+var text = "<textformat rightmargin='5' leading='2'><p align='LEFT' style='text-align: right;'><font face='Monotype Corsiva'><font color='#000000' letterspacing='0' kerning='1'>L</font><font color='#000000' letterspacing='0' kerning='1'>o<b>rem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and </b></font></font></p></textformat>"
+
+
+alert(encodeURI(text))
+
+//document.getElementById("test_div").innerHTML = text;
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+<!--<script src="cntrlr.js"></script>-->
+</head>
+
+<body>
+<script>
+var theApp = angular.module("myApp", ["ngRoute"]);
+
+theApp.config(function($routeProvider){
+
+$routeProvider
+.when("/",{templateURL : "1.html"})
+.when("/red",{templateURL:"2.html"})
+.when("/blue",{templateURL:"3.html"});
+
+
+
+})
+
+theApp.controller("personController",function($scope) {
+ 
+	
+});
+
+
+
+
+</script>
+
+
+<!---<div ng-app="" ng-init="price=250;Qnt=3;Dsc=5">-->
+<div ng-app="myApp" ng-controller="personController" style="color:#f90">
+	<a href="#red">Red</a>
+	<a href="#blue">blue</a>
+	<div ng-view></div>
+</div>
+
+</body>
+</html>

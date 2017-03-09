@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+<body>
+<div id="holder" >
+
+
+<input id="btn" type="button" value="MyBtn"></input>
+
+</div>
+
+
+<script src="scripts/jquery.js"></script>
+<script>
+$(document).ready(function(){
+	
+
+	function getSecondJson(){
+		var theDeffered = $.Deferred();
+		
+		timer = setInterval(function(){
+			//console.log("inside Timer")
+			theDeffered.notify();
+		},500)
+		
+		timeout = setTimeout(function(){
+			clearInterval(timer);
+			//console.log("timeout")
+			theDeffered.reject();
+		},5000)
+		
+		return theDeffered.promise();
+	}
+	
+	var thePromise = getSecondJson();
+
+	/*thePromise.then(function(arg){
+		console.log("Resolved")
+	},function(arg){
+		console.log("Rejected")
+	},function(arg){
+		console.log("Progress")
+	})*/
+	
+	thePromise.done(function(){
+		console.log("Resolved")
+	})
+	thePromise.fail(function(){
+		console.log("Failed")
+	})
+	thePromise.always(function(){
+		console.log("Always")
+	})
+	thePromise.progress(function(){
+		console.log("Progress")
+	})
+	
+	
+	
+	
+	
+	
+		
+
+})
+
+
+</script>
+</body>
+</html>

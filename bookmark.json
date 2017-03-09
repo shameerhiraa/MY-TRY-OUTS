@@ -1,0 +1,15 @@
+﻿{
+	"bookmarks": [{
+		"title": "Google",
+		"url": "www.google.com"
+	}, {
+		"title": "Yahoo",
+		"url": "www.yahoo.com"
+	}, {
+		"title": "facebook",
+		"url": "www.facebook.com"
+	}, {
+		"title": "gmail",
+		"url": "www.gmail.com"
+	}]
+}

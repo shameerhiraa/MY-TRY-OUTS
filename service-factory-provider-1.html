@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+<body ng-app="theApp">
+<div id="holder" ng-controller="TheCtrl">
+
+
+
+
+</div>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script>
+
+var theApp = angular.module("theApp",[])
+
+
+theApp.controller("TheCtrl",function($scope,myService,myFactory,myProvider){
+		
+		$scope.n = myService.changeCompany("Cognizant");
+		console.log(myFactory.name);
+		console.log(myProvider)
+})
+
+theApp.service("myService",function(){
+	
+		this.name = "Shameer";
+		this.company = "Logical steps";
+		this.changeCompany = function(newCompany){
+			this.company = newCompany;
+			return this.company;
+		}
+})
+
+theApp.factory("myFactory",function(){
+	name = "Nuha parvin";
+	company = "AIMS";
+	
+	return{"name":name,"company":company}
+
+})
+
+theApp.provider("myProvider",function(){
+	this.$get = function(){
+	
+		name = "Bilal Muhammad";
+		company = "NEST";
+		
+		return{"name":name,"company":company}
+	
+	}
+	
+
+
+})
+
+
+
+
+</script>
+</body>
+</html>

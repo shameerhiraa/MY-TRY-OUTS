@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <style>
+        .left-line {
+            width: 5px;
+            height: 100px;
+            background-color: red;
+        }
+        
+        .top-line {
+            width: 100px;
+            height: 5px;
+            background-color: red;
+        }
+        
+        .right-line {
+            width: 5px;
+            height: 100px;
+            background-color: red;
+        }
+        
+        .bottom-line {
+            width: 100px;
+            height: 5px;
+            background-color: red;
+        }
+        
+        .common-line-style {
+            position: absolute;
+        }
+        
+        .tranform-tool-holder {
+            position: absolute;
+        }
+        
+        .transform-box {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100px;
+            height: 100px;
+            background-color: rgba(125, 125, 0, 0.0);
+            border: 5px solid red;
+        }
+        
+        .resize-handlers {
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            position: absolute;
+            border: 1px solid black;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+
+    <div id="tranform_tool_holder" class="tranform-tool-holder" onclick="onToolClick()">
+
+        <div id="transform_box" class="transform-box"></div>
+        <div id="top_left_resize_handle" class="top-left-resize-handle resize-handlers"></div>
+        <div id="top_right_resize_handle" class="top-right-resize-handle resize-handlers"></div>
+        <div id="bottom_left_resize_handle" class="bottom-left-resize-handle resize-handlers"></div>
+        <div id="bottom_right_resize_handle" class="bottom-right-resize-handle resize-handlers"></div>
+
+
+    </div>
+
+    <script src="scripts/jquery.js"></script>
+    <script src="http://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+
+    <script>
+        function onYellowClick() {
+            alert("onYellowClick")
+
+
+        }
+
+        function onToolClick() {
+            alert("onToolClick()")
+
+        }
+
+        function renderTransformTool(x, y, w, h, t) {
+            $(".tranform-tool-holder").css('left', x + 'px');
+            $(".tranform-tool-holder").css('top', y + 'px');
+            $(".transform-box").css({
+                'width': w,
+                'height': h,
+                "borderWidth": t + "px"
+            })
+            $(".top-left-resize-handle").css({
+                'left': "0px",
+                'top': "0px"
+            });
+            $(".top-right-resize-handle").css({
+                'left': w,
+                'top': "0px"
+            });
+            $(".bottom-left-resize-handle").css({
+                'left': "0px",
+                'top': h
+            });
+            $(".bottom-right-resize-handle").css({
+                'left': w,
+                'top': h
+            });
+        }
+
+
+
+
+        $(document).ready(function() {
+            //alert("Jquery ready")
+
+            renderTransformTool(100, 100, 200, 200, 5)
+
+            $("#bottom_right_resize_handle").draggable({
+                drag: function(evt, elm) {
+                    renderTransformTool(100, 100, evt.target.offsetLeft, evt.target.offsetTop, 5)
+                }
+
+            });
+
+
+        })
+    </script>
+
+
+</body>
+
+</html>
