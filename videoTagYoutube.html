@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>TEST Document</title>
+
+</head>
+<body ng-app="myApp" ng-controller="listController">
+
+
+<video width="640" height="360" id="my-video">
+    <source type="video/youtube" src="https://www.youtube.com/watch?v=Rlq39IC07qA" />
+</video>
+
+
+
+<script src="scripts/youtube-video.js"></script>
+<script>
+
+var a = document.getElementById('my-video');
+
+var theYoutubePlayer = new YoutubeVideo({
+	el:document.getElementById('my-video')
+})
+
+theYoutubePlayer.load();
+</script>
+</body>
+</html>

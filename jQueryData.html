@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+<body>
+<div id="holder" style="size:18px; color:red" >
+hello world
+</div>
+
+
+<script src="scripts/jquery.js"></script>
+<script>
+$(document).ready(function(){
+		
+		console.log($('#holder').prop('style').size)
+		console.log($('#holder').attr('style').size)
+		
+		$("#holder").data("hi","shamer")
+		console.log($("#holder").data("hi"))
+})
+
+
+</script>
+</body>
+</html>

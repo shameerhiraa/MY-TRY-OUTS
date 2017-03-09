@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+<body>
+
+
+
+
+<script>
+
+var obj1={name:"shameer",age:30}
+console.log(obj1)
+
+function createObj(n,a){
+	this.name = n;
+	this.age = a;
+	
+}
+
+var obj2 = new createObj('shameer',30)
+console.log(obj2)
+
+var obj3 = Object.create(Object.prototype)
+obj3.name = "Shameer";
+obj3.age = 32;
+
+console.log(obj3)
+</script>
+</body>
+</html>

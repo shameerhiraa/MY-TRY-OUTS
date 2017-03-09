@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+#red{
+	width:500px;
+	height:500px;
+	background-color:red;
+
+}
+
+#yellow{
+
+width:200px;
+	height:200px;
+	background-color:yellow;
+	top:50px;
+	left:50px;
+	position:relative;
+
+}
+</style>
+</head>
+<body >
+
+<div id="red" >
+
+<div id="yellow" >
+
+
+
+</div>
+
+</div>
+
+<script src="scripts/jquery-1.12.3.js"></script>
+<script>
+
+
+$("#yellow").on("mousemove",function(e){
+
+	console.log(e.offsetX+''+e.offsetY)
+	
+
+
+})
+
+</script>
+</body>
+</html>

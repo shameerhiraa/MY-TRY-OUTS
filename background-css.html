@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>TEST Document</title>
+<style>
+.test{
+	width:250px;
+	height:200px;
+	overflow:hidden;
+	}
+.test img{
+	
+	
+}
+
+</style>
+
+
+</head>
+<body ng-app="myApp" ng-controller="listController">
+
+<div class="test">
+
+<img id="img_asset"src="IMG_20160221_150303.jpg" onload="imgLoaded(this)">
+</div>
+
+<script>
+function imgLoaded(par){
+
+	console.log(par.width,par.height);
+	console.log(document.getElementById('img_asset'))
+	document.getElementById('img_asset').style.width = '100%';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="angular.min.js"></script>
+<title>TEST Document</title>
+
+
+</head>
+<body>
+
+<div>
+
+<video id="my_video" width="320" height="240" controls autoplay>
+
+<source src="Anmaria_kalippilanu.mp4"  type="video/mp4"></source>
+
+</video>
+
+<button id="my_btn" onclick="onBtnClick()">Click here</button>
+
+
+</div>
+
+
+<script>
+function onBtnClick(){
+	document.getElementById("my_video").load();
+
+}
+
+
+</script>
+
+</body>
+</html>

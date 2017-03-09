@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="angular.min.js"></script>
+<title>TEST Document</title>
+
+<style>
+
+.slide-sett-hldr{
+	width:1500px;
+	height:700px;
+	background-color:yellow;
+}
+.slide-sett-hldr .slide_sett_content{
+	background-color:red;
+	
+	position:relative;
+	width:550px;
+	margin:auto;
+	top:50%;
+	height:370px;
+	transform:translateY(-50%)
+	
+}
+.slide-sett-hldr .section-heading{
+    position: absolute;
+    top: -14px;
+    left: 0px;
+    font-family: 'Roboto', sans-srif;
+    font-size: 11px;
+    font-weight: 500;
+}
+.slide_sett_content .section{
+	    width: 90%;
+    background-color: green;
+    height: 90px;
+    margin: auto;
+    top: 20px;
+    position: relative;
+    margin-bottom: 20px;
+	border-radius: 2px;
+	box-sizing:border-box;
+	padding-left:30px;
+	padding-top:30px;
+}
+
+.gradient-bg{
+
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#575E5E', endColorstr='#3A3E40'); /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#575E5E), to(#3A3E40)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #575E5E,  #3A3E40); /* for firefox 3.6+ */
+}
+.sub-heading-text{
+	font-size:11px;
+}
+</style>
+
+</head>
+<body>
+
+
+<div class='slide-sett-hldr'>
+
+<div class='slide_sett_content'>
+ <div class="gradient-bg" style="width:100%;height:25px;position:relative;"><span class="alert-title" style=" color:#FFF;  position:absolute;">SLIDE SETTINGS</span></div>
+
+<div class='section'>
+<div class='section-heading'>AUTO NAVIGATION</div>
+	<input type="checkbox" id="auto_nav_chk" onclick="" style='width:20px;height:20px;'/>
+				   <label style="position: relative;top: -6px;" class='sub-heading-text'>AUTONAVIGATION</label>
+				   
+				   <div style='    position: relative;left: 30px;display: inline-block;top: -6px;'>
+				   <label style="position: relative;" class='sub-heading-text'>GO TO</label>
+				   <select>
+				   <option>firstSlide</option>
+				   <option>secondSlide</option>
+				   
+				   </select>
+				   
+				    <label style="position: relative;" class='sub-heading-text'>AFTER</label>
+					<input type="text" style='width:30px' ></input>
+					 <label style="position: relative;" class='sub-heading-text'>SECONDS</label>
+				   </div>
+				   
+
+</div>
+<div class='section'>
+<div class='section-heading'>SHOW/HIDE CONTROLS</div>
+
+<input type="checkbox" id="auto_nav_chk" onclick="" style='width:20px;height:20px;'/>
+				   <label style="position: relative;top: -6px;" class='sub-heading-text'>HIDE NEXT BUTTON</label>
+				   
+				   <input type="checkbox" id="auto_nav_chk" onclick="" style='width:20px;height:20px;'/>
+				   <label style="position: relative;top: -6px;" class='sub-heading-text'>HIDE BACK BUTTON</label>
+
+</div>
+<div class='section'>
+<div class='section-heading'>SHOW/HIDE FOOTER</div>
+
+<input type="checkbox" id="auto_nav_chk" onclick="" style='width:20px;height:20px;'/>
+				   <label style="position: relative;top: -6px;" class='sub-heading-text'>HIDE FOOTER FOR ALL SLIDES</label>
+</div>
+
+</div>
+
+
+</div>
+
+
+
+<script>
+
+
+</script>
+
+</body>
+</html>

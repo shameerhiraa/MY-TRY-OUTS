@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>TEST Document</title>
+
+<style>
+
+
+</style>
+
+</head>
+<body ng-app="theApp" ng-controller="theController">
+
+<div id='parent'>
+<div id="test_div_id" style="width:100px; height:100px; background-color:red"></div>
+<div id="test_div_id2" style="width:100px; height:100px; background-color:yellow"></div>
+
+</div>
+<script src="scripts/jquery-1.12.3.js"></script>
+
+<script>
+
+$(document).ready(function(){
+
+$('#parent').on('mousemove',function(e){
+console.log(e.target.id)
+
+})
+
+
+})
+
+
+</script>
+
+</body>
+</html>

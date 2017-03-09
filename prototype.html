@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+
+
+</style>
+</head>
+<body>
+
+
+
+</div>
+
+
+
+<script>
+
+function parentFunction(){
+	this.house = 'Hiraa';
+}
+parentFunction.prototype.address = 'Hiraa';
+var obj = new parentFunction();
+console.dir(Object.getPrototypeOf(obj))
+
+
+</script>
+</body>
+</html>

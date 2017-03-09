@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Colorpicker demo</title>
+	<script src="scripts/jquery-1.12.3.js"></script>
+	
+<style>
+
+#my_canvas{
+	cursor:url(images/fav_ico.cur),default;
+}
+
+</style>
+	
+</head>
+<body>
+
+<canvas id='my_canvas' width='500' height='500'></canvas>
+
+
+<script>
+
+var canvas = document.getElementById('my_canvas')
+var ctx = canvas.getContext('2d');
+
+ctx.rect(0,0,100,100)
+ctx.fill()
+
+$(document).ready(function(){
+
+	alert('Jquery ready');
+	
+	$('#my_canvas').on('mouseenter',function(){
+	
+		//console.log('on mouse move')
+	})
+	
+	$('#my_canvas').on('mousemove',function(evt){
+	
+	console.log(ctx.getImageData(evt.pageX,evt.pageY,1,1).data[3])
+	
+	})
+})
+
+</script>
+</body>
+</html>

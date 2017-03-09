@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="angular.min.js"></script>
+<title>TEST Document</title>
+
+
+</head>
+<body>
+<template id="first_template">
+
+<div>This is the hidden div inside template tag</div>
+
+</template>
+
+
+<div id="one" onclick="myFunction()" style="background-color:#ff6600">Click here</div>
+<div id="one" onclick="myFunction()" style="background-color:#ff6600">Click th ere</div>
+<script>
+
+console.log(document.getElementById('one').innerHTML);
+
+var host = document.querySelector("#one");
+var root = host.createShadowRoot();
+var a = document.getElementById('first_template')
+var clone = document.importNode(a.content,true)
+root.appendChild(clone);
+//console.log(clone);
+//root.textContent = "hi hi"
+
+
+
+
+</script>
+
+</body>
+</html>

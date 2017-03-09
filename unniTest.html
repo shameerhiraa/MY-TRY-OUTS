@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>TEST Document</title>
+
+<style>
+
+
+</style>
+
+</head>
+<body>
+
+<form action="http://demov2.bsynapse.com/index.php/Collection/savecollections" method="post" enctype="multipart/form-data" id="dynamicform">
+    <!--<div class="bSynapse-form">
+									<span class="form-label label-primary">Name</span>
+										<input id="form_name" name="form_name" placeholder="Text" type="text">
+										<div id="form_child_error" class="alert alert-danger m-t-sm hide">
+										  <strong>Error!</strong> Please enter the collection text.
+										</div>
+									</div>
+									<!--<div class="bSynapse-form">
+									<span class="form-label label-primary">Description</span>
+										<textarea id="form_description" name="form_description" placeholder="Description"></textarea>
+										<div id="form_child_error" class="alert alert-danger m-t-sm hide">
+										  <strong>Error!</strong> Please enter the collection description.
+										</div>
+									</div>-->
+
+    <div id="remove_1" class="bSynapse-form">
+        <div id="formlabel_1" class="form-label label-primary">Text</div><input id="form_child_1" name="form_child_1" placeholder="Text" type="text">
+        <div id="form_error_1" class="alert alert-danger m-b-none m-t-sm hide"><strong>Error!</strong> </div>
+        <div class="pull-right "><a href="javascript:removediv(1)" class="text-danger" title="Remove Field" style="font-size: 20px;"><i class="fa fa-trash "></i></a><a href="javascript:void(0);" onclick="changediv(1)" class="text-success m-l-sm" title="Change Field" style="font-size: 20px;"><i class="fa fa-cogs "></i></a></div>
+        <div id="changeprop_1" class="nav-details child-properties  m-t-lg theme-selector">
+            <div class="nav-list-space">
+                <ul class="goal-list"><span class="m-t-n-md block m-b text-center">PROPERTIES</span>
+                    <li><input onkeyup="changeattribute(this,'form_child_','label',1,'formlabel_')" id="change_name_1" name="change_name_1" placeholder="Change label" type="text"></li>
+                    <li><input onkeyup="changeattribute(this,'form_child_','placeholder',1,'formlabel_')" id="change_placeholder_1" name="change_placeholder_1" placeholder="Change Placeholder" type="text"></li>
+                    <li><label class="form-label label-info">Validation </label>
+                        <div class="pull-right"> <input value="Yes" id="text_require_1" name="text_require_1" type="radio" onclick="checkClick(this,1);">Yes <input onclick="checkClick(this,1);" value="No" id="text_require_1" name="text_require_1" type="radio">No</div>
+                    </li>
+                    <li id="error_li_1" class="hide"><input onkeyup="changeattribute(this,'form_child_','texterror',1,'formlabel_')" id="change_texterror_1" name="change_texterror_1" placeholder="Change error message" type="text"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="remove_2" class="bSynapse-form">
+        <div id="formlabel_2" class="form-label label-primary">Textarea</div><textarea id="form_child_2" name="form_child_2" placeholder="Description"></textarea>
+        <div id="form_error_2" class="alert alert-danger m-b-none m-t-sm hide"><strong>Error!</strong> </div>
+        <div class="pull-right "><a href="javascript:removediv(2)" class="text-danger" title="Remove Field" style="font-size: 20px;"><i class="fa fa-trash "></i></a><a href="javascript:void(0);" onclick="changediv(2)" class="text-success m-l-sm" title="Change Field" style="font-size: 20px;"><i class="fa fa-cogs "></i></a></div>
+        <div id="changeprop_2" class="nav-details child-properties  m-t-lg theme-selector">
+            <div class="nav-list-space">
+                <ul class="goal-list"><span class="m-t-n-md block m-b text-center">PROPERTIES</span>
+                    <li><input id="change_name_2" name="change_name_2" onkeyup="changeattribute(this,'form_child_','label',2,'formlabel_')" placeholder="Change label" type="text"></li>
+                    <li><input id="change_placeholder_2" name="change_placeholder_2" placeholder="Change Placeholder" onkeyup="changeattribute(this,'form_child_','placeholder',2,'formlabel_')" type="text"></li>
+                    <li><label class="form-label label-info">Validation </label>
+                        <div class="pull-right"> <input value="Yes" id="text_require_2" name="text_require_2" type="radio" onclick="checkClick(this,2);">Yes <input onclick="checkClick(this,2);" value="No" id="text_require_2" name="text_require_2" type="radio">No</div>
+                    </li>
+                    <li id="error_li_2" class="hide"><input onkeyup="changeattribute(this,'form_child_','texterror',2,'formlabel_')" id="change_texterror_2" name="change_texterror_2" placeholder="Change error message" type="text"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="remove_3" class="bSynapse-form">
+        <div id="formlabel_3" class="form-label label-primary">Drop-Down</div><select class="form-control form-control-size " id="form_child_3" name="form_child_3" style=" border: 1px solid #e3e4e8;"><option value="0">select</option><option id="option_3" value="">option</option></select>
+        <div id="form_error_3" class="alert alert-danger m-b-none m-t-sm hide"><strong>Error!</strong> </div>
+        <div class="pull-right "><a href="javascript:removediv(3)" class="text-danger" title="Remove Field" style="font-size: 20px;"><i class="fa fa-trash "></i></a><a href="javascript:void(0);" onclick="changediv(3)" class="text-success m-l-sm" title="Change Field" style="font-size: 20px;"><i class="fa fa-cogs "></i></a></div>
+        <div id="changeprop_3" class="nav-details child-properties  m-t-lg theme-selector">
+            <div class="nav-list-space">
+                <ul class="goal-list"><span class="m-t-n-md block m-b text-center">PROPERTIES</span>
+                    <li><input onkeyup="changeattribute(this,'form_child_','label',3,'formlabel_')" id="change_name_3" name="change_name_3" placeholder="Change label" type="text"></li>
+                    <li id="change_dropli_3"><input style="float: left; width: 85%;" id="change_placeholder_3" name="change_placeholder_3" onkeyup="changeattribute(this,'form_child_','dropdown',3,'option_')" placeholder="Change option" type="text">
+                        <div class="pull-right m-t-sm"><button type="button" onclick="addchildoption(3,'dropdown')" class="btn-success btn btn-xs m-r-xs" title="Add Option"><i class="fa fa-plus-circle"></i></button><button type="button" onclick="removechildoption(3,'dropdown')" class="btn-danger btn btn-xs" title="Remove Option"><i class="fa fa-minus-circle"></i></button></div>
+                    </li>
+                    <li><label class="form-label label-info">Validation </label>
+                        <div class="pull-right"> <input value="Yes" id="text_require_3" name="text_require_3" type="radio" onclick="checkClick(this,3);">Yes <input onclick="checkClick(this,3);" value="No" id="text_require_3" name="text_require_3" type="radio">No</div>
+                    </li>
+                    <li id="error_li_3" class="hide"><input onkeyup="changeattribute(this,'form_child_','texterror',3,'formlabel_')" id="change_texterror_3" name="change_texterror_3" placeholder="Change error message" type="text"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</form>
+
+<script src="scripts/jquery.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+<script>
+
+$(document).ready(function(){
+var selectedItemIdx = ''
+console.log('ready')
+
+$('.bSynapse-form').on('click',function(e){
+	e.stopPropagation();
+	console.log($('#'+e.target.id).index())
+	selectedItemIdx=$('#'+e.target.id).index();
+
+})
+
+})
+
+
+</script>
+
+</body>
+</html>

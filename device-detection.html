@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+
+</style>
+</head>
+<body onload="detectDevice()">
+
+
+<script>
+
+function detectDevice(){
+	if(/android/i.test(navigator.userAgent)){
+		window.location = 'https://play.google.com/store/apps/details?id=gmms.mathrubhumi.basic'
+	}else if(/iPad|iPhone|iPod/.test(navigator.userAgent)){
+		window.location = 'https://itunes.apple.com/ae/app/mathrubhumi/id520404360'
+	}else if(/Windows Phone/i.test(navigator.userAgent)){
+		window.location = 'https://www.microsoft.com/en-in/store/p/mathrubhumi-news/9nblggh4rdwl'
+	}else{
+		window.location = 'https://play.google.com/store/apps/details?id=gmms.mathrubhumi.basic'
+	}
+}
+</script>
+</body>
+</html>

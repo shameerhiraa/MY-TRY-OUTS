@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+
+
+</style>
+</head>
+<body>
+
+
+
+</div>
+
+
+
+<script>
+
+function test(par,par2,par3){
+	console.log(this.name)
+	console.log(par)
+	console.log(par2)
+	console.log(par3)
+	
+}
+
+var testObj={name:"shameer"}
+var testArr=[11,12,13]
+test.apply(testObj,[11,12,13,14])
+
+
+</script>
+</body>
+</html>

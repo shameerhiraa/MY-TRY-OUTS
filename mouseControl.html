@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>TEST Document</title>
+
+<style>
+
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<!---<script src='angular.min.js'></script>--->
+</head>
+<body ng-app="mgApp">
+
+
+<div ng-controller='startSceneCtrl'></div>
+
+
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
+
+<script>
+
+
+
+
+var mgApp = angular.module('mgApp',[]);
+//var theApp = angular.module("theApp",[])
+mgApp.run(function($rootScope){
+	console.log('inside run')
+	console.log($rootScope)
+	$rootScope.stages = ['00','01','02','03'];
+	$rootScope.currentStageIdx = 0;
+})
+
+mgApp.controller('startSceneCtrl',function($scope,$rootScope){
+	console.log('startSceneCtrl')
+	console.log($rootScope.stages)
+	
+})
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>TEST Document</title>
+
+<style>
+
+
+
+
+
+</style>
+
+</head>
+<body ng-app="theApp" ng-controller="theController">
+
+<button onclick='test()'>test</button>
+
+<script>
+
+function test(){
+
+console.log('window.location: '+ window.location)
+console.log('window.location.hostname :'+window.location.hostname)
+console.log('window.location.pathname :'+window.location.pathname)
+
+window.location.assign('http://www.w3schools.com/jsref/met_node_issamenode.asp')
+}
+
+</script>
+
+</body>
+</html>

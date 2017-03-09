@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="styles/quill.snow.css" rel="stylesheet">
+<!--<link href="https://cdn.quilljs.com/1.2.0/quill.snow.css" rel="stylesheet">-->
+<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+
+<style>
+
+#editor-container {
+  font-family: "Aref Ruqaa";
+  font-size: 18px;
+  height: 175px;
+  width:400px;
+}
+
+/* Set dropdown font-families */
+#toolbar-container .ql-font span[data-label="Aref Ruqaa"]::before {
+  font-family: "Aref Ruqaa";
+}
+#toolbar-container .ql-font span[data-label="Mirza"]::before {
+  font-family: "Mirza";
+}
+#toolbar-container .ql-font span[data-label="Roboto"]::before {
+  font-family: "Roboto";
+}
+
+/* Set content font-families */
+.ql-font-mirza {
+  font-family: "Mirza";
+}
+.ql-font-roboto {
+  font-family: "Roboto";
+}
+
+#toolbar-container{
+	width:400px;
+	
+}
+
+
+
+</style>
+
+</head>
+<body>
+
+<div id="toolbar-container">
+ <button class="ql-bold"></button>
+  <button class="ql-italic"></button>
+   <button class="ql-underline"></button>
+   
+   <select title="Text Color" class="ql-color">
+            <option value="rgb(0, 0, 0)" label="rgb(0, 0, 0)" selected=""></option>
+            <option value="rgb(230, 0, 0)" label="rgb(230, 0, 0)"></option>
+            <option value="rgb(255, 153, 0)" label="rgb(255, 153, 0)"></option>
+            <option value="rgb(255, 255, 0)" label="rgb(255, 255, 0)"></option>
+            <option value="rgb(0, 138, 0)" label="rgb(0, 138, 0)"></option>
+            <option value="rgb(0, 102, 204)" label="rgb(0, 102, 204)"></option>
+            <option value="rgb(153, 51, 255)" label="rgb(153, 51, 255)"></option>
+            <option value="rgb(255, 255, 255)" label="rgb(255, 255, 255)"></option>
+            <option value="rgb(250, 204, 204)" label="rgb(250, 204, 204)"></option>
+            <option value="rgb(255, 235, 204)" label="rgb(255, 235, 204)"></option>
+            <option value="rgb(255, 255, 204)" label="rgb(255, 255, 204)"></option>
+            <option value="rgb(204, 232, 204)" label="rgb(204, 232, 204)"></option>
+            <option value="rgb(204, 224, 245)" label="rgb(204, 224, 245)"></option>
+            <option value="rgb(235, 214, 255)" label="rgb(235, 214, 255)"></option>
+            <option value="rgb(187, 187, 187)" label="rgb(187, 187, 187)"></option>
+            <option value="rgb(240, 102, 102)" label="rgb(240, 102, 102)"></option>
+            <option value="rgb(255, 194, 102)" label="rgb(255, 194, 102)"></option>
+            <option value="rgb(255, 255, 102)" label="rgb(255, 255, 102)"></option>
+            <option value="rgb(102, 185, 102)" label="rgb(102, 185, 102)"></option>
+            <option value="rgb(102, 163, 224)" label="rgb(102, 163, 224)"></option>
+            <option value="rgb(194, 133, 255)" label="rgb(194, 133, 255)"></option>
+            <option value="rgb(136, 136, 136)" label="rgb(136, 136, 136)"></option>
+            <option value="rgb(161, 0, 0)" label="rgb(161, 0, 0)"></option>
+            <option value="rgb(178, 107, 0)" label="rgb(178, 107, 0)"></option>
+            <option value="rgb(178, 178, 0)" label="rgb(178, 178, 0)"></option>
+            <option value="rgb(0, 97, 0)" label="rgb(0, 97, 0)"></option>
+            <option value="rgb(0, 71, 178)" label="rgb(0, 71, 178)"></option>
+            <option value="rgb(107, 36, 178)" label="rgb(107, 36, 178)"></option>
+            <option value="rgb(68, 68, 68)" label="rgb(68, 68, 68)"></option>
+            <option value="rgb(92, 0, 0)" label="rgb(92, 0, 0)"></option>
+            <option value="rgb(102, 61, 0)" label="rgb(102, 61, 0)"></option>
+            <option value="rgb(102, 102, 0)" label="rgb(102, 102, 0)"></option>
+            <option value="rgb(0, 55, 0)" label="rgb(0, 55, 0)"></option>
+            <option value="rgb(0, 41, 102)" label="rgb(0, 41, 102)"></option>
+            <option value="rgb(61, 20, 102)" label="rgb(61, 20, 102)"></option>
+    </select>
+ <select class="ql-font rtf-font-cmb corner-r3" >
+            	<option class="rtf-cmb-item" value="sans-serif" selected>Sans Serif</option>
+                <option class="rtf-cmb-item" value="Georgia, serif">Serif</option>
+                <option class="rtf-cmb-item" value="Monaco, 'Courier New', monospace">Monospace</option>
+                <option class="rtf-cmb-item" value="'Oswald', sans-serif">Oswald</option>
+                <option class="rtf-cmb-item" value="'Helvetica Neue','HelveticaNeueW01-55Roma','Helvetica',Helvetica,Arial,sans-serif">Helvetica Neue</option>
+                <option class="rtf-cmb-item" value="'HelveticaNeue-Light','Helvetica Neue Light','HelveticaNeueW01-45Ligh','Helvetica Neue',Arial,sans-serif">Helvetica Neue Light</option>
+                <option class="rtf-cmb-item" value="'HelveticaNeue-Bold','Helvetica Neue Bold','HelveticaNeueW01-75Bold','Helvetica Neue',Arial,sans-serif">Helvetica Neue Bold</option>
+            </select>
+
+  <select class="ql-size">
+    <option value="12px">12px</option>
+	<option value="14px">14px</option>
+	<option value="16px">16px</option>
+	<option value="18px">18px</option>
+	<option value="20px">20px</option>
+	<option value="22px">22px</option>
+    <option value="24px">24px</option>
+	<option value="26px">26px</option>
+	<option value="28px">28px</option>
+	<option value="30px">30px</option>
+	<option value="32px">32px</option>
+  </select> 
+  
+  <select title="Font" class="ql-align">
+<option selected>left</option>
+<option>right</option>
+<option>center</option>
+<option>justify</option>
+</select>
+      
+          
+         
+         
+        
+  
+</div>
+<div id="editor-container">
+  
+ 
+</div>
+
+<button onclick=getText()>SET TEXT</button>
+<button onclick=getHtml()>GET TEXT</button>
+
+<script src="quill.js" type="text/javascript"></script>
+<!--<script src="https://cdn.quilljs.com/1.2.0/quill.js"></script>-->
+
+<script>
+
+//var Font = Quill.import('formats/font');
+
+// We do not add Aref Ruqaa since it is the default
+//Font.whitelist = ['mirza', 'roboto'];
+//Quill.register(Font, true);
+
+//var Size = Quill.import('attributors/style/size');
+//Size.whitelist =['12px','14px','16px','18px','20px','22px','24px','26px','28px','30px','32px']
+//Quill.register(Size, true);
+
+var quill = new Quill('#editor-container', {
+  modules: {
+    toolbar: '#toolbar-container'
+  },
+  theme: 'snow'
+});
+
+//editor.addModule('toolbar', { container: '#toolbar-container' });
+
+function getText(){
+	//console.log(quill.getText())
+	document.querySelector(".ql-editor").innerHTML = '<p class="ql-align-center"><strong style="font-size: 14px;" class="ql-font-roboto">sdfas</strong><strong style="font-size: 32px;" class="ql-font-roboto">dfs sd</strong><strong style="font-size: 32px; color: rgb(230, 0, 0);" class="ql-font-roboto">afds fdsa</strong><strong style="font-size: 14px;" class="ql-font-roboto">f dsf</strong></p>'
+}
+function getHtml(){
+console.log(document.querySelector(".ql-editor").innerHTML)
+}
+
+
+</script>
+
+</body>
+
+</html>

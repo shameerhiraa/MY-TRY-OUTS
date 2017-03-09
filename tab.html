@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+
+
+.audio-selection-tab{
+	padding:0px;
+	margin:0px;
+}
+.audio-selection-tab ul{
+	list-style:none;
+	 
+}
+
+.audio-selection-tab li{
+	list-style:none;
+	display:inline-block;
+	padding:8px;
+	margin:0px;
+	background-color:#f96;
+	user-select:none;
+	cursor:pointer;
+	margin-right:-4px;
+	 font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+	
+}
+.audio-selection-tab li:first-child{
+	border-top-left-radius:5px;
+}
+.audio-selection-tab li:last-child{
+	border-top-right-radius:5px;
+}
+
+.audio-selection-tab li:hover{
+	background-color:#f60;
+}
+.audio_preview{
+	width:400px;
+	height:200px;
+	background-color:yellow;
+	margin-bottom:5px;
+	position:relative;
+	
+}
+.audio-selection-tab-holder{
+
+	
+}
+.audio-selection-tab-holder .btns{
+	width: 75px;
+    height: 20px;
+    background: #09C;
+    position: relative;
+    float: left;
+    margin-left: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    color: #FFF;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 6px;
+    cursor: pointer;
+	    border-radius: 2px;
+		position:absolute;
+		
+	}
+.audio-selection-tab-holder .update-btn{
+	    top: 107px;
+    left: 185px;
+}
+
+.audio-selection-tab-holder .remove-btn{
+	top: 107px;
+    left: 265px;
+}
+	
+.audio-selection-tab-holder .audio-tag{
+	position:absolute;
+	width:300px;
+	top:70px;
+	left:50px;
+}
+.audio-selection-tab-holder .track-name{
+	position:absolute;
+	width:300px;
+	top:50px;
+	left:50px;
+	font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+	
+	height:15px;
+	overflow:hidden;
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="audio-selection-tab-holder">
+	<ul class="audio-selection-tab">
+	
+	<li>AUDIO FOR THIS SLIDE</li>
+	<li>AUDIO FOR ALL SLIDES</li>
+	
+	</ul>
+
+	<div id="slide_audio_preview" class="audio_preview">
+	<div class="track-name">No item selected</div>
+	<audio controls class="audio-tag">
+	<source src=""></source>
+	</audio>
+	<div class="btns update-btn" >UPDATE</div>
+	<div class="btns remove-btn" >REMOVE</div>
+	</div>
+	
+	<div id="slide_audio_preview" class="audio_preview">
+	<div class="track-name">text here</div>
+	<audio controls class="audio-tag">
+	<source src="audio/ringtone.mp3"></source>
+	</audio>
+	<div class="btns update-btn" >UPDATE</div>
+	<div class="btns remove-btn" >REMOVE</div>
+	</div>
+</div>
+
+  <script>
+  
+  </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>TEST Document</title>
+
+</head>
+<body ng-app="myApp" ng-controller="listController">
+<input type="text" name="search" ng-model="search"></input>
+<ul>
+<li ng-repeat="a in fileterdRes = (data | filter:search)">{{a}}</li>
+
+</ul>
+<div ng-if="fileterdRes.length != data.length" >Reuslt found{{fileterdRes.length}}</div>
+
+
+<script src="angular.min.js"></script>
+<script>
+
+var myApp = angular.module('myApp',[]);
+
+myApp.controller('listController',function($scope){
+
+	//alert("angular is ready")
+	$scope.data=["Shameer","Anas","Fasil","Nisar","Musthafa","Afsal","Aslam","Sajeed","Sajid"];
+
+})
+
+
+
+</script>
+</body>
+</html>

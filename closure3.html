@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="angular.min.js"></script>
+<title>TEST Document</title>
+
+<style>
+
+
+
+
+
+
+
+</style>
+
+</head>
+<body>
+<button onclick="myFunction()">Click here</button>
+<script>
+
+function doCount(){
+	var cnt=0;
+	return function(){
+		return cnt++;
+	}
+
+}
+
+var add = doCount();
+
+console.log(add())
+console.log(add())
+console.log(add())
+console.log(add())
+console.log(add())
+console.log(add())
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+<style>
+
+</style>
+</head>
+<body>
+   <div id='drag_select' style='width:100px;height:100px; position:relative;background-color:blue'></div>
+   
+   <script src="scripts/jquery.js"></script>
+ <script>
+ var x=0;
+ var y=0;
+ var isDragging = false;
+ 
+
+ 
+$(document).ready(function(){
+ 
+ $(document).on('mousedown',function(evt){
+	x = evt.pageX;
+	y = evt.pageY;
+	//isDragging = true;
+ 
+ })
+ 
+ $(document).on('mousemove',function(evt){
+	if(isDragging){
+		$('#drag_select').css({
+			'left':x+'px',
+			'top':y+'px',
+			'width':(evt.pageX - x)+'px',
+			'height':(evt.pageY - y)+'px'
+		})
+	
+	}
+ 
+ })
+ 
+  $(document).on('mouseup',function(evt){
+	
+ })
+ });
+ 
+ </script>  
+   
+   
+   
+
+</body>
+</html>

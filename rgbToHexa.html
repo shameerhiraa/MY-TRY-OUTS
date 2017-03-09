@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Colorpicker demo</title>
+	<script src="scripts/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+
+<div id='test_color'></div>
+
+
+<script>
+
+
+$(document).ready(function(){
+
+	
+	$.fn.canvasColorPicker = function(par){
+		var t = new Date().getTime();
+		
+		var canvas_id ='canv_'+t;
+		
+		$(this).html("<canvas id='"+canvas_id+"' width='300' height='300'></canvas>")
+		
+		var img = new Image();
+		
+		img.src = par.img;
+		
+		var ctx = document.getElementById(canvas_id).getContext('2d')
+		
+		
+		
+		$(img).on('load',function(){
+			
+			console.log(img.width,img.height)
+			document.getElementById(canvas_id).width = img.width;
+			document.getElementById(canvas_id).height = img.height;
+			//ctx.canvas.width = img.width;
+			//ctx.canvas.height = img.height;
+			ctx.drawImage(img,0,0)
+		})
+		
+		function toHexa(par){
+			var hex = par.toString(16);
+			return hex.length == 1 ? "0"+hex : hex;
+		
+		}
+		$('#'+canvas_id).on('click',function(evt){			
+			var theX = evt.pageX - this.offsetLeft;
+			var theY = evt.pageY - this.offsetTop;
+			var img_data = ctx.getImageData(theX,theY,1,1).data;
+			par.onChange('#'+toHexa(img_data[0])+toHexa(img_data[1])+toHexa(img_data[2]))
+		})
+		
+	}
+	
+	
+	
+	$('#test_color').canvasColorPicker({
+		img:'images/color-picker.png',
+		onChange:function(col){
+			console.log('inside onchange '+col)
+		}
+	});
+	
+
+})
+
+</script>
+</body>
+</html>

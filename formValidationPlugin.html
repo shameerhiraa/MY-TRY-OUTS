@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+<form  name="signup" id="signup_form" novalidate>
+<label for="name">Name:</label>
+	<input type="text" name="name" value="" data-formValidate="name"></input><br>
+	<label for="password">Password:</label>
+	<input type="password" name="password" value="" data-formValidate="password"></input><br>
+	<label for="email">Email:</label>
+	<input type="email" name="email" value="" data-formValidate="email"></input><br>
+	<label for="phone">Phone:</label>
+	<input type="number" name="phone" value="" data-formValidate="phone"></input><br>
+</form>
+
+
+
+
+<script src="scripts/jquery-1.12.3.js"></script>
+
+
+<script>
+$(document).ready(function(){
+	//console.log(document.forms['signup']['name'].value)
+	//console.log(document.forms['signup']['password'])
+	//console.log(document.forms['signup']['email'])
+	//console.log(document.forms['signup']['phone'])
+	
+	$.fn.formValidate = function(opt) {
+		var ele_to_validate = [];
+		for (var i = 0; i < this.children().length; i++) {
+			var currItem = this.children()[i]
+			if ($(currItem).is('input') && $(currItem).attr("data-formValidate") != undefined) {
+				$(currItem).blur(function() {
+					//required
+					if (opt.rules[$(this).attr("data-formValidate")] != undefined) {
+					
+					
+					
+						if($(this).attr("data-formValidate") == 'email'){
+							console.log('email')
+						}
+					
+					
+						//min
+						
+						if (opt.rules[$(this).attr("data-formValidate")].min != undefined) {
+						
+							if ($(this).val().length < opt.rules[$(this).attr("data-formValidate")].min) {
+								if ($(this).next().is('span.error_message')) {
+									$(this).next().remove();
+								}
+								$(this).after("<span class='error_message'>" + opt.messages[$(this).attr("data-formValidate")].min + "</span>")
+							} else {
+								if ($(this).next().is('span.error_message')) {
+									$(this).next().remove();
+								}
+							}
+						}
+					
+					
+						if (opt.rules[$(this).attr("data-formValidate")].required!=undefined) {
+							if ($(this).val() == "") {
+								if ($(this).next().is('span.error_message')) {
+									$(this).next().remove();
+								}
+								$(this).after("<span class='error_message'>" + opt.messages[$(this).attr("data-formValidate")].required + "</span>")
+							} else {
+								if ($(this).next().is('span.error_message')) {
+									$(this).next().remove();
+								}
+							}
+						}
+				
+						
+						
+						
+					}
+				
+					
+					
+				})
+				ele_to_validate.push($(this.children()[i]))
+			}
+		}
+	}
+	
+	
+	$('#signup_form').formValidate({
+		rules:{
+			name:{
+				required:true,
+				min:2
+			},
+			password:{
+				required:true,
+				min:2
+			},
+			email:{
+				required:true,
+				email:true
+			},
+			phone:{
+				required:true,
+				
+			}
+	    },
+		messages:{
+			name:{
+				required:"Please enter your name",
+				min:"Please enter minimum chars"
+			
+			},
+			password:{
+				required:"Please enter password"
+				
+			},
+			email:{
+				required:"Please enter email",
+				pattern:"Please enter valid email"
+			},
+			phone:{
+				required:"Please enter Phone number",
+				pattern:"Please enter valid Phone number"
+			}
+		}
+	
+	
+	});
+	
+
+	
+	console.log()
+	
+})
+
+
+
+</script>
+
+</body>
+
+</html>

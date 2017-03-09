@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>TEST Document</title>
+
+<style>
+
+
+</style>
+
+</head>
+<body>
+
+
+<script src="scripts/jquery.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+<script>
+
+var form = {};
+
+var firstItem =[];
+
+firstItem.push({'id':'001','place':'Enter name'})
+firstItem.push({'id':'002','place':'Enter name'})
+
+//console.log(firstItem['001'])
+
+console.log(firstItem[0]['place']);
+
+firstItem[0]['place'] = "Please enter"
+
+console.log(firstItem)
+
+
+
+
+form.form =firstItem;
+
+
+
+//console.log(form.form.length)
+
+for(var i=0;i<form.form.length;i++){
+	console.log(form.form[i].id)
+
+}
+
+
+
+$(document).ready(function(){
+
+
+})
+
+
+</script>
+
+</body>
+</html>

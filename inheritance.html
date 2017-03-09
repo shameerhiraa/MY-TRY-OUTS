@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+
+
+</style>
+</head>
+<body>
+
+
+
+</div>
+
+
+
+<script>
+
+function parentFunction(){
+	this.house = 'Hiraa';
+}
+
+function childFunction(){
+	this.name = 'shameer';
+	this.house = 'Maruthi'
+	
+}
+
+childFunction.prototype = new parentFunction();
+
+var childObj = new childFunction();
+//console.log(childObj)
+
+function testFunction(){
+
+}
+//console.log(testFunction.prototype)
+var testObj = {name:"shameer",age:"30"}
+console.dir(testObj.constructor.prototype)
+
+</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>TEST Document</title>
+
+<style>
+
+#tooltip_hldr{
+	width:auto;
+	padding:5px 12px;
+	background-color:#c3c0c0;
+	height:30px;
+	display:inline-block;
+	position:absolute;
+	top:10px;
+	left:10px;
+	box-sizing:border-box;
+	border-radius:2px;
+	font-family: 'Roboto', sans-serif;
+	font-size:15px;
+	
+
+}
+.img_pre_loader_hldr{
+	display:inline-block;
+	position:absolute;
+
+}
+.img_pre_loader{
+	width:20px;
+	height:20px;
+	border-radius:10px;
+	
+	border-top:2px solid #f60;
+	border-right:transparent;
+	border-bottom:transparent;
+	border-left:transparent;
+	animation-name:preloader;
+	animation-duration:.5s;
+	animation-iteration-count:infinite;
+	animation-timing-function:linear;
+	display:inline-block;
+
+}
+.img_pre_loader_txt{
+	display: inline-block;
+    position: relative;
+    top: -5px;
+	font-family: 'Roboto', sans-serif;
+	font-size:14px;
+}
+@keyframes preloader{
+	0%{transform:rotate(0deg)}
+	100%{transform:rotate(360deg)}
+}
+
+</style>
+
+</head>
+<body style="margin:0px; padding:0px;">
+<div class="img_pre_loader_hldr">
+	<div class="img_pre_loader"></div>
+	<div class="img_pre_loader_txt">Loading image...</div>
+</div>
+<script>
+
+
+
+</script>
+
+</body>
+</html>

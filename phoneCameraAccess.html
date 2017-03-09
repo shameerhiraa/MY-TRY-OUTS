@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+
+</head>
+<body>
+<div>Take photo</div>
+<input type='file' capture='camera' accept='image/*'  id='take_picture' >
+<img id='captured_img'>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js'></script>
+<script>
+$(document).ready(function(){
+
+ $('#take_picture').on('change',function(evt){
+ 
+	if(evt.target.files.length == 1 ){
+		$('#captured_img').attr('src',URL.createObjectURL(event.target.files[0]));
+	
+	}
+ 
+ })
+
+
+})
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="angular.min.js"></script>
+<title>TEST Document</title>
+
+<style>
+
+
+input{
+
+
+}
+
+
+
+
+</style>
+
+</head>
+<body ng-app="theApp" ng-controller="theController">
+
+<form name="signup" action="/signup.php" method="get" validate>
+
+<input type="text" name="test"></input>
+<input type="email" name="eMaIl"></input>
+<input type="button" value="Click here" ng-click="onBtnClick()" ng-hide="signup.test.$touched"></input>
+
+</form>
+
+
+
+
+<script>
+
+
+var theApp = angular.module("theApp",[])
+
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>TEST Document</title>
+
+<style>
+
+
+</style>
+
+</head>
+<body>
+
+<div id='holder' style='width:500px; height:500px; background-color:yellow; position:absolute;top:0px;left:0px'>
+
+<div id='ver' style='height:100%;width:1px; background-color:red; position:absolute'></div>
+<div id='hor' style='height:1px;width:100%; background-color:blue; position:absolute'></div>
+
+<div id='handle' style='width:20px; height:20px; background-color:green; position:absolute'></div>
+
+</div>
+
+<script src="scripts/jquery.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+<script>
+
+$(document).ready(function(){
+	
+	
+	$('#handle').draggable({
+		drag:function(e,u){
+			console.log(e)
+			console.log(e.clientX +' '+e.offsetX)
+			$('#ver').css('left',e.clientX+'px');
+			$('#hor').css('top',e.clientY+'px');
+			
+			
+		},
+		cursorAt:{left:parseInt($('#handle').css('width'))/2,top:parseInt($('#handle').css('height'))/2},
+		containment:'#holder'
+	
+	})
+
+})
+
+
+</script>
+
+</body>
+</html>

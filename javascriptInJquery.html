@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+<div id="one" class="test">hello world</div>
+<button id="myBtn" type="button">Click me</button>
+
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+<script>
+$(document).ready(function(){
+	console.log($('#one').attr('class'))
+	console.log(document.getElementById('one').getAttribute('class'))
+})
+
+$("#myBtn").on("click",function(){
+
+	alert($('#one').data("name"))
+
+})
+</script>
+
+</body>
+
+</html>

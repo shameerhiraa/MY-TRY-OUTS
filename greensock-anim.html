@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<body>
+
+
+<div id='test_div' style='width:200px; height:150px; background-color:yellow'></div>
+
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+
+<script>
+
+var el = document.getElementById('test_div');
+var myTween = new TweenMax(el,1,{width:'500px',height:'500px',ease:Bounce.easeOut})
+//var myTween = new TweenMax(el,1,{width:'500px',height:'500px',ease:Elastic.easeOut})
+
+
+
+function getHttpsPath(p){
+			if(p.indexOf('http:') >= 0){
+				p = p.replace('http:','https:')
+			}
+			return p;
+}
+
+console.log(getHttpsPath('http://sdfasdfsdfds.jpg'))
+
+</script>
+
+</body>
+</head>
+</html>

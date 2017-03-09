@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+
+@font-face{
+	font-family:myFirstFont;
+	src:url(test.woff);
+
+}
+
+</style>
+
+
+</head>
+<body>
+
+<input type='button' id="test" value='Click here' onclick='onTestClick()'>
+
+
+
+
+<script>
+
+function onTestClick(){
+
+	if(Worker){
+		console.log('worker availabel')
+		var w = new Worker("myworker.js");
+		
+		w.addEventListener('message',function(e){
+			
+			alert('Completed'+e.data)
+		
+		})
+		
+	}else{
+		console.log('worker not available')
+	}
+	
+}
+
+(function startTimer(){
+	var a = 0;
+	setInterval(function(){
+	
+	console.log(a++);
+	
+	},100)
+	
+
+	
+})()
+
+</script>
+</body>
+</html>

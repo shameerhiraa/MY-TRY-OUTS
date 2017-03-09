@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--<link href="styles/quill.snow.css" rel="stylesheet">-->
+<link href="https://cdn.quilljs.com/1.2.0/quill.snow.css" rel="stylesheet">
+
+<style>
+
+#quill_test {
+ 
+}
+.ql-font-sofia {
+  font-family: 'Sofia', sans-serif;
+}
+
+.ql-font-roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+</style>
+
+</head>
+<body>
+
+<div id='quill_test'>
+ 
+<p>Hello this is the first p node for vignets text editor</p>
+
+</div>
+
+<!--<script src="scripts/quill.min.js" type="text/javascript"></script>-->
+<script src="https://cdn.quilljs.com/1.2.0/quill.js"></script>
+
+<script>
+
+var fonts = ['sofia', 'roboto'];
+var Font = Quill.import('formats/font');
+Font.whitelist = fonts;
+Quill.register(Font, true);
+
+var quill = new Quill('#quill_test', {
+  modules: {
+    toolbar:[
+		['bold','italic','underline'],
+		[{ 'color': [] }, { 'background': [] }],
+		[{ 'list': 'ordered'}, { 'list': 'bullet' }],
+		[{font: ['sofia', 'roboto']}],
+		[{ 'size': ['small', false, 'large', 'huge'] }]
+	
+	]
+  },
+  theme: 'snow' 
+});
+quill.format('font', 'sofia');
+
+
+</script>
+
+</body>
+
+</html>
