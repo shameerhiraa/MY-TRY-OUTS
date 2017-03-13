@@ -27,3 +27,9 @@ mgApp.config(function($routeProvider){
 mgApp.controller('startSceneCtrl',function($scope,$rootScope,$location){
 	
 })
+
+mgApp.directive('pathDir',function(){
+	
+	
+	
+})
