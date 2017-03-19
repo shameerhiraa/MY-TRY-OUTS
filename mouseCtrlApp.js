@@ -34,29 +34,28 @@ mgApp.config(function($routeProvider){
 	}).when("/03",{
 		templateUrl:'views/03.html',
 		controller:'thirdStageCtrl'
-	}).when("/04",{
-		templateUrl:'views/04.html',
-		controller:'fourthStageCtrl'
 	}).otherwise({redirectTo:'00'})
 })
 
 
 mgApp.controller('startSceneCtrl',function($scope,$rootScope,$location){
+	console.log('start Ctrl')
 	
 })
 
 mgApp.controller('firstStageCtrl',function($scope,$rootScope,$location){
+	console.log('first Ctrl')
 
 })
 mgApp.controller('secondStageCtrl',function($scope,$rootScope,$location){
-	
+	console.log('second Ctrl')
 })
 mgApp.controller('thirdStageCtrl',function($scope,$rootScope,$location){
-	
+	console.log('third Ctrl')
+	$rootScope.currentStageIdx = 3;
+	$scope.scare = false;
 })
-mgApp.controller('fourthStageCtrl',function($scope,$rootScope,$location){
-	
-})
+
 
 
 mgApp.directive('pathCanv',function(){
@@ -71,19 +70,22 @@ mgApp.directive('pathCanv',function(){
 			
 			var alpha = $(el).get(0).getContext("2d").getImageData(e.offsetX,e.offsetY,1,1).data[3]
 			var hex = $(el).get(0).getContext("2d").getImageData(e.offsetX,e.offsetY,1,1).data[0].toString(16)+$(el).get(0).getContext("2d").getImageData(e.offsetX,e.offsetY,1,1).data[1].toString(16)+$(el).get(0).getContext("2d").getImageData(e.offsetX,e.offsetY,1,1).data[2].toString(16);
-			console.log(sc.currentStageIdx)
+			//console.log(sc.currentStageIdx)
 			if(sc.isPlaying && alpha == 0){
 				sc.isPlaying = false;
-				//console.log('FAILED')
+				console.log('FAILED')
 				sc.restartGame();
 				sc.$apply();
 			}
-			
-			if(sc.isPlaying && alpha == 218 && sc.currentStageIdx == 3){
+			console.log(alpha)
+			if(sc.isPlaying && (alpha >= 218 && alpha < 230) && sc.currentStageIdx == 3){
 				console.log('sc.scare');
 				
 				sc.isPlaying = false;
-				sc.increaseOneStep()
+				//sc.increaseOneStep()
+				console.log(sc.scare);
+				sc.scare = true;
+				console.log(sc.scare);
 				sc.$apply();
 			}
 			
@@ -123,7 +125,7 @@ mgApp.directive('pathCanv',function(){
 			console.log('error')
 		}
 		
-		console.log(attr.img)
+		//console.log(attr.img)
 		
 		img.src = attr.img;
 		
