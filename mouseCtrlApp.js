@@ -58,6 +58,33 @@ mgApp.controller('thirdStageCtrl',function($scope,$rootScope,$location){
 
 
 
+
+mgApp.directive('theAudio',function(){
+	function theLinkFunction(sc,el,attr){
+		console.log('AUDIO LINK FUNCTION')
+		console.log(el)
+		sc.$watch('scare',function(newVal,oldVal){
+			console.log('INSIDE WATCH');
+		
+			
+			if(newVal){
+				$(el).get(0).play();
+			}
+			
+		})
+		
+		
+		
+	}
+	return{
+		link:theLinkFunction
+		
+	}
+	
+})
+
+
+
 mgApp.directive('pathCanv',function(){
 	
 	function theLinkFunction(sc,el,attr){
