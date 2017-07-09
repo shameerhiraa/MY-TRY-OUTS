@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+<body>
+<div id="holder" style="size:18px; color:red" >
+hello world
+</div>
+
+
+<script src="scripts/jquery.js"></script>
+<script>
+$(document).ready(function(){
+		
+		//alert('ready')
+		
+		var theJSON;
+		
+		function getValue(n){
+			return theJSON.emp[n];
+		
+		}
+		
+		
+		$.getJSON('test.json',function(res){
+		
+			theJSON = res;
+			console.log(getValue('place'))
+			console.log(getValue('name'))
+		
+		})
+})
+
+
+</script>
+</body>
+</html>

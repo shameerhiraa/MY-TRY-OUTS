@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+<body>
+<div id="holder" style="size:18px; color:red" >
+hello world
+</div>
+
+
+<script src="scripts/jquery.js"></script>
+<script>
+$(document).ready(function(){
+		
+		//alert('ready')
+		var a =['shameer','anas','nisar','musthafa','shameer']
+		//console.log($.inArray('nisar',a))
+		//console.log(a.indexOf('shameer'))
+		
+		
+		function checkDuplicate(el,ind,arr){
+			
+			if(ind == arr.indexOf(el)){
+				return true;
+			}else{
+				return false;
+			}
+		
+		}
+		
+		var b = a.filter(checkDuplicate);
+		console.log(checkDuplicate)
+		
+		
+		var a = new Object()
+		console.log(a)
+		var b = {}
+		console.log(b)
+
+})
+
+
+</script>
+</body>
+</html>

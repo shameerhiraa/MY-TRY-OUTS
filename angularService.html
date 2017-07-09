@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<title>TEST Document</title>
+	</head>
+	<body ng-app="theApp">
+	<div  ng-controller="firstCtrl"><p>first controller</p><button ng-click="changeValue('Banglore')">Change value</button>{{data}}</div>
+	
+	<div ng-controller="secondCtrl"><p>Second controller</p>{{data}}</div>
+	
+	
+	<script>
+		
+var theApp = angular.module("theApp",[])
+
+theApp.factory('dataFactory',function($rootScope){
+		
+		var data='default';
+		
+		return {
+		
+			getName:function(){
+			
+				return data;
+			},
+			setName:function(n){
+			
+				console.log('inside set name')
+				
+				data = n;
+				
+				$rootScope.$broadcast('update')
+			
+			}
+		
+		
+		}
+	
+	
+	
+
+})
+
+	theApp.controller('firstCtrl',function($scope,dataFactory,$rootScope){
+		
+		
+		$rootScope.$on('update',function(){
+			console.log('Broadcast listener')
+			$scope.data = dataFactory.getName();
+		
+		})
+		
+		$scope.data = dataFactory.getName();
+		dataFactory.setName('Shameer hiraa')
+		
+		
+	})
+	
+	
+	theApp.controller('secondCtrl',function($scope,dataFactory){
+		
+		
+	
+	})
+	
+
+	
+	
+	</script>
+
+	</body>
+</html>

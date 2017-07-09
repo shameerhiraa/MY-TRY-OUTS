@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>Angular JS Forms</title>
+
+</head>
+<body>
+
+<div id="test"></div>
+
+<script>
+function secondFunction(){
+	var n ="shameer";
+	document.getElementById('test').innerHTML = 'SECOND FUNCTION';
+}
+
+function thirdFunction(){
+
+	document.getElementById('test').innerHTML = 'THIRD FUNCTION';
+
+}
+
+function firstFunction(){
+	var a= 5;
+	for(var i=0;i<a;i++){
+		document.getElementById('test').innerHTML = i;
+	}
+	
+	secondFunction();
+
+}
+
+firstFunction()
+thirdFunction()
+
+</script>
+
+
+</body>
+</html>
