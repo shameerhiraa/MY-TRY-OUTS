@@ -105,7 +105,7 @@ mgApp.directive('pathCanv',function(){
 				sc.$apply();
 			}
 			console.log(alpha)
-			if(sc.isPlaying && (alpha >= 218 && alpha < 230) && sc.currentStageIdx == 3){
+			if(sc.isPlaying && (alpha >= 180 && alpha < 230) && sc.currentStageIdx == 3){
 				console.log('sc.scare');
 				
 				sc.isPlaying = false;
